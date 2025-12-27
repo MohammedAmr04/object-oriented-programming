@@ -2,15 +2,21 @@
 {
     internal class Program
     {
+    // Encapsulation helps keep the object in a valid state
+    // by hiding internal data, applying business logic inside the class,
+    // and preventing direct access that could lead to invalid values.
+
         static void Main(string[] args)
         {
+            // Create new employee object
             var Employee = new Employee();
-            // before encapsulation 
-            //Employee.FirstName = "Mohammed";
+            // Encapsulation: setting name through a method
+            // Direct access is not allowed because setters are private
             Employee.SetName("Mohammed", "Amr");
-            // before encapsulation
-            //Employee.BirthDate = new DateOnly(1700, 5, 23);
+            // Encapsulation: setting birthdate with validation
             Employee.SetBirthDate(new DateOnly(1960,5,5));
+            // These values are invalid logically
+            // The goal of encapsulation is to prevent such cases
             // task make encapsulation to salary and tax
             Employee.BasicSalary = -5000;
             Employee.TaxPercentage = 140;
