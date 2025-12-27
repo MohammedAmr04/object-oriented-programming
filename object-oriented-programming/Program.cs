@@ -4,30 +4,26 @@
     {
         static void Main(string[] args)
         {
-            var Employee = new Employee();
+           var salariedEmployee = new SalariedEmployee();
+            salariedEmployee.BasicSalary = 2000;
+            salariedEmployee.Transportation = 500;
+            salariedEmployee.Housing = 1000;
+            Console.WriteLine($"Salary of salariedEmployee {salariedEmployee.GetSalary()} ");
+            Console.WriteLine($"Salary of salariedEmployee {salariedEmployee.GetSalary(500)} ");
 
-            Employee.SetName("Mohammed", "Amr");
-            Employee.SetBirthDate(new DateOnly(1960,5,5));
-            Employee.BasicSalary = -5000;
-            Employee.TaxPercentage = 140;
+            Console.WriteLine("----------------------------------------------------------");
+            var hourlyEmloyee  = new HourlyEmployee();
+            hourlyEmloyee.HourRate = 1000;
+            hourlyEmloyee.TotalWorkingHours = 10;
+            Console.WriteLine($"Salary of hourlyEmloyee {hourlyEmloyee.GetSalary()} ");
+            Console.WriteLine("----------------------------------------------------------");
+            var internEmployee = new InternEmployee();
+            Console.WriteLine($"Salary of internEmployee {internEmployee.GetSalary()} ");
+            Console.WriteLine("----------------------------------------------------------");
 
-            PersonDetails(Employee);
-            Console.WriteLine($" Employee BasicSalary is {Employee.BasicSalary}");
-            Console.WriteLine($" Employee TaxPercentage is {Employee.TaxPercentage}");
-            Console.WriteLine("------------------------------------------------------");
-            var applicant = new Applicant();
-            applicant.SetName("Applicant", "2");
-            applicant.SetBirthDate(new DateOnly(2004,3,11));
-            PersonDetails(applicant);
 
-            
-            void PersonDetails(Person person)
-            {
-                Console.WriteLine($"  Name is {person.FirstName} {person.LastName} ");
-                Console.WriteLine($"  Birthdate is {person.BirthDate}");
-            }
         }
-      
+
     }
 
 }
