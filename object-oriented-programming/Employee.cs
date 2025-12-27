@@ -8,8 +8,12 @@ namespace object_oriented_programming
 {
     internal class Employee
     {
+        // Encapsulation:
+        // Public getter + private setter
+        // The name cannot be changed directly from outside
         public string FirstName { get; private set; }
         public string LastName { get;private set; }
+        // Method responsible for validating and setting name
         public void SetName(string firstName, string lastName)
         {
             if( String.IsNullOrWhiteSpace(lastName) || String.IsNullOrWhiteSpace(firstName))
@@ -20,7 +24,7 @@ namespace object_oriented_programming
             LastName = lastName;
         }
         public DateOnly BirthDate { get; private set; }
-
+        // Validation logic is hidden inside the class
         public void SetBirthDate(DateOnly date)
         {
             if(date < new DateOnly(1960, 1, 1))
