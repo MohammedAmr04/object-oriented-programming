@@ -10,6 +10,12 @@ namespace object_oriented_programming
     {
         public int HourRate { get; set; } 
         public int TotalWorkingHours { get; set; }
+
+        public override IEnumerable<PayItem> GetPayItems()
+        {
+            return new[] { new PayItem("Total Hours", GetSalary()) };
+        }
+
         public override decimal GetSalary()
         {
             return HourRate * TotalWorkingHours;

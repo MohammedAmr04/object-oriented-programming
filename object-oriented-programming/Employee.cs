@@ -11,6 +11,7 @@ namespace object_oriented_programming
 
         public int TaxPercentage { get; set; }
         public abstract decimal GetSalary();
+        public abstract IEnumerable<PayItem> GetPayItems();
 
     }
 }

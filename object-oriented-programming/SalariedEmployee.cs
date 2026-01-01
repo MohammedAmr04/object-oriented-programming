@@ -11,6 +11,17 @@ namespace object_oriented_programming
         public decimal BasicSalary { get; set; }
         public int Housing { get; set; }
         public int Transportation { get; set; }
+
+        public override IEnumerable<PayItem> GetPayItems()
+        {
+            return new[] 
+            {
+                new PayItem("Basic Salary",BasicSalary),
+                new PayItem("Transportation",Transportation),
+                new PayItem("Housing",Housing),
+            };
+        }
+
         public override decimal GetSalary()
         {
             return BasicSalary + Transportation + Housing;
