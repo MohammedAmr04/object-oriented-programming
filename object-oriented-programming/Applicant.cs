@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace object_oriented_programming
 {
-    internal class Employee:Person
+    internal class Applicant:Person 
     {
-
-        public decimal BasicSalary { get; set; }
-        public int TaxPercentage { get; set; }
     }
 }
