@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace object_oriented_programming
 {
-    internal abstract class Employee:Person
+    internal class InternEmployee :Employee
     {
-
-        public int TaxPercentage { get; set; }
-        public abstract decimal GetSalary();
-
+        public override decimal GetSalary()
+        {
+            return 2000;
+        }
     }
 }

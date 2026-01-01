@@ -8,36 +8,40 @@
 
         static void Main(string[] args)
         {
-            // Create new employee object
-            var Employee = new Employee();
-            // Encapsulation: setting name through a method
-            // Direct access is not allowed because setters are private
-            Employee.SetName("Mohammed", "Amr");
-            // Encapsulation: setting birthdate with validation
-            Employee.SetBirthDate(new DateOnly(1960,5,5));
-            // These values are invalid logically
-            // The goal of encapsulation is to prevent such cases
-            // task make encapsulation to salary and tax
-            Employee.BasicSalary = -5000;
-            Employee.TaxPercentage = 140;
 
-            PersonDetails(Employee);
-            Console.WriteLine($" Employee BasicSalary is {Employee.BasicSalary}");
-            Console.WriteLine($" Employee TaxPercentage is {Employee.TaxPercentage}");
-            Console.WriteLine("------------------------------------------------------");
-            var applicant = new Applicant();
-            applicant.SetName("Applicant", "2");
-            applicant.SetBirthDate(new DateOnly(2004,3,11));
-            PersonDetails(applicant);
+           var salariedEmployee = new SalariedEmployee();
+            salariedEmployee.BasicSalary = 2000;
+            salariedEmployee.Transportation = 500;
+            salariedEmployee.Housing = 1000;
+            Console.WriteLine($"Salary of salariedEmployee {salariedEmployee.GetSalary()} ");
+            Console.WriteLine($"Salary of salariedEmployee {salariedEmployee.GetSalary(500)} ");
 
-            
-            void PersonDetails(Person person)
-            {
-                Console.WriteLine($"  Name is {person.FirstName} {person.LastName} ");
-                Console.WriteLine($"  Birthdate is {person.BirthDate}");
-            }
+            Console.WriteLine("----------------------------------------------------------");
+            var hourlyEmloyee  = new HourlyEmployee();
+            hourlyEmloyee.HourRate = 1000;
+            hourlyEmloyee.TotalWorkingHours = 10;
+            Console.WriteLine($"Salary of hourlyEmloyee {hourlyEmloyee.GetSalary()} ");
+            Console.WriteLine("----------------------------------------------------------");
+            var internEmployee = new InternEmployee();
+            Console.WriteLine($"Salary of internEmployee {internEmployee.GetSalary()} ");
+            Console.WriteLine("----------------------------------------------------------");
+
+//             // Create new employee object
+//             var Employee = new Employee();
+//             // Encapsulation: setting name through a method
+//             // Direct access is not allowed because setters are private
+//             Employee.SetName("Mohammed", "Amr");
+//             // Encapsulation: setting birthdate with validation
+//             Employee.SetBirthDate(new DateOnly(1960,5,5));
+//             // These values are invalid logically
+//             // The goal of encapsulation is to prevent such cases
+//             // task make encapsulation to salary and tax
+//             Employee.BasicSalary = -5000;
+//             Employee.TaxPercentage = 140;
+
+
         }
-      
+
     }
 
 }
